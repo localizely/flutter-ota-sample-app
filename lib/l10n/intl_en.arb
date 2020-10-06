@@ -1,0 +1,22 @@
+{
+  "@@locale": "en",
+  "appTitle": "Over-the-air app",
+  "@appTitle": {
+    "description": "Application title"
+  },
+  "pageHomePushedButtonMessage": "You have pushed the button this many times: {count}",
+  "@pageHomePushedButtonMessage": {
+    "description": "Home page button pushed message",
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "pageHomeTitle": "Home page",
+  "@pageHomeTitle": {
+    "description": "Home page title"
+  },
+  "pageHomeWelcomeMessage": "Welcome to Over-the-air app",
+  "@pageHomeWelcomeMessage": {
+    "description": "Home page welcome message"
+  }
+}
