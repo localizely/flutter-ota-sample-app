@@ -47,6 +47,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  generate: true
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -83,9 +84,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-
-flutter_intl:
-  enabled: true
-  main_locale: en_US
-  localizely:
-    ota_enabled: true # Required for Over-the-air translation updates

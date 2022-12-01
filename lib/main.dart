@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_gen/gen_l10n/localizely_localizations.dart';
 import 'package:localizely_sdk/localizely_sdk.dart'; // Import sdk package
-
-import 'generated/l10n.dart';
 
 void main() {
   Localizely.init('<SDK_TOKEN>',
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      onGenerateTitle: (context) => S.of(context).appTitle,
+      onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -35,15 +34,11 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      localizationsDelegates: const [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: S.delegate.supportedLocales,
+      localizationsDelegates: LocalizelyLocalizations.localizationsDelegates,
+      supportedLocales: LocalizelyLocalizations.supportedLocales,
       home: Builder(
-          builder: (context) => MyHomePage(title: S.of(context).pageHomeTitle)),
+          builder: (context) =>
+              MyHomePage(title: AppLocalizations.of(context)!.pageHomeTitle)),
     );
   }
 }
@@ -134,12 +129,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                     padding: const EdgeInsets.all(20),
                     child: Text(
-                      S.of(context).pageHomeWelcomeMessage,
+                      AppLocalizations.of(context)!.pageHomeWelcomeMessage,
                       style: const TextStyle(fontSize: 16),
                     ),
                   ),
                   Text(
-                    S.of(context).pageHomePushedButtonMessage(_counter),
+                    AppLocalizations.of(context)!
+                        .pageHomePushedButtonMessage(_counter),
                   ),
                 ],
               ),
