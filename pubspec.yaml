@@ -86,5 +86,6 @@ flutter:
 
 flutter_intl:
   enabled: true
+  main_locale: en_US
   localizely:
     ota_enabled: true # Required for Over-the-air translation updates
