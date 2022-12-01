@@ -6,9 +6,15 @@ Flutter sample app with “Over the Air” translation updates
 
 ## Setup
 
-- Create new project on [Localizely](https://localizely.com) platform and upload ARB files from `lib\l10n` folder
+- Clone the repo
+- Run `flutter pub get` command
+- Create a new project on the [Localizely](https://localizely.com) platform and upload ARB files from the `lib\l10n` folder
 - Create new distribution and SDK token for the created project
-- Update `Localizely.init('<SDK_TOKEN>', '<DISTRIBUTION_ID>');` within `lib\main.dart` file with real data from Localizely platform
-- Add new release to the created distribution to see translation updates
+- Set distribution ID and SDK token from the Localizely platform in the `lib\main.dart` file
+- Run the app on a device
+- Update translations and add a new release to the created distribution to see translation updates
 
-Documentation: https://localizely.com/flutter-over-the-air/
+## Useful links
+
+- [Flutter Over-the-Air documentation](https://localizely.com/flutter-over-the-air/)
+- [Flutter Over-the-Air example with gen_l10n](https://github.com/localizely/flutter-ota-sample-app/tree/main)
