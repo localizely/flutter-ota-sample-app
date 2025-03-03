@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_gen/gen_l10n/localizely_localizations.dart';
 import 'package:localizely_sdk/localizely_sdk.dart'; // Import sdk package
 
+import 'l10n/generated/app_localizations.dart';
+import 'l10n/generated/localizely_localizations.dart';
+
 void main() {
-  Localizely.init('<SDK_TOKEN>',
-      '<DISTRIBUTION_ID>'); // Initialize Localizely SDK with your sdk token and distribution id
+  Localizely.init(
+    '<SDK_TOKEN>',
+    '<DISTRIBUTION_ID>',
+  ); // Initialize Localizely SDK with your sdk token and distribution id
   Localizely.setPreRelease(
-      true); // Add this only if you want to use prereleases
+    true,
+  ); // Add this only if you want to use prereleases
   Localizely.setAppVersion(
-      '1.0.0'); // Add this only if you want to explicitly set the application version, or in cases when automatic detection is not possible (e.g. Flutter web apps)
+    '1.0.0',
+  ); // Add this only if you want to explicitly set the application version, or in cases when automatic detection is not possible (e.g. Flutter web apps)
 
   runApp(const MyApp());
 }
@@ -44,8 +49,10 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: LocalizelyLocalizations.localizationsDelegates,
       supportedLocales: LocalizelyLocalizations.supportedLocales,
       home: Builder(
-          builder: (context) =>
-              MyHomePage(title: AppLocalizations.of(context)!.pageHomeTitle)),
+        builder:
+            (context) =>
+                MyHomePage(title: AppLocalizations.of(context)!.pageHomeTitle),
+      ),
     );
   }
 }
@@ -89,12 +96,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // Call 'updateTranslations' after localization delegates initialization
     Localizely.updateTranslations().then(
-        (response) => setState(() {
-              _isLoading = false;
-            }),
-        onError: (error) => setState(() {
-              _isLoading = false;
-            }));
+      (response) => setState(() {
+        _isLoading = false;
+      }),
+      onError:
+          (error) => setState(() {
+            _isLoading = false;
+          }),
+    );
   }
 
   @override
@@ -118,45 +127,48 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: _isLoading
-            ? const CircularProgressIndicator()
-            : Column(
-                // Column is also a layout widget. It takes a list of children and
-                // arranges them vertically. By default, it sizes itself to fit its
-                // children horizontally, and tries to be as tall as its parent.
-                //
-                // Column has various properties to control how it sizes itself and
-                // how it positions its children. Here we use mainAxisAlignment to
-                // center the children vertically; the main axis here is the vertical
-                // axis because Columns are vertical (the cross axis would be
-                // horizontal).
-                //
-                // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-                // action in the IDE, or press "p" in the console), to see the
-                // wireframe for each widget.
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    padding: const EdgeInsets.all(20),
-                    child: Text(
-                      AppLocalizations.of(context)!.pageHomeWelcomeMessage,
-                      style: const TextStyle(fontSize: 16),
+        child:
+            _isLoading
+                ? const CircularProgressIndicator()
+                : Column(
+                  // Column is also a layout widget. It takes a list of children and
+                  // arranges them vertically. By default, it sizes itself to fit its
+                  // children horizontally, and tries to be as tall as its parent.
+                  //
+                  // Column has various properties to control how it sizes itself and
+                  // how it positions its children. Here we use mainAxisAlignment to
+                  // center the children vertically; the main axis here is the vertical
+                  // axis because Columns are vertical (the cross axis would be
+                  // horizontal).
+                  //
+                  // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
+                  // action in the IDE, or press "p" in the console), to see the
+                  // wireframe for each widget.
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      padding: const EdgeInsets.all(20),
+                      child: Text(
+                        AppLocalizations.of(context)!.pageHomeWelcomeMessage,
+                        style: const TextStyle(fontSize: 16),
+                      ),
                     ),
-                  ),
-                  Text(
-                    AppLocalizations.of(context)!
-                        .pageHomePushedButtonMessage(_counter),
-                  ),
-                ],
-              ),
+                    Text(
+                      AppLocalizations.of(
+                        context,
+                      )!.pageHomePushedButtonMessage(_counter),
+                    ),
+                  ],
+                ),
       ),
-      floatingActionButton: _isLoading
-          ? null
-          : FloatingActionButton(
-              onPressed: _incrementCounter,
-              tooltip: 'Increment',
-              child: const Icon(Icons.add),
-            ), // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButton:
+          _isLoading
+              ? null
+              : FloatingActionButton(
+                onPressed: _incrementCounter,
+                tooltip: 'Increment',
+                child: const Icon(Icons.add),
+              ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

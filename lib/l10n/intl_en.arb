@@ -8,7 +8,9 @@
   "@pageHomePushedButtonMessage": {
     "description": "Home page button pushed message",
     "placeholders": {
-      "count": {}
+      "count": {
+        "type": "int"
+      }
     }
   },
   "pageHomeTitle": "Home page",
