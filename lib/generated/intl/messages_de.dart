@@ -24,10 +24,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "appTitle": MessageLookupByLibrary.simpleMessage("Over-the-air App"),
-        "pageHomePushedButtonMessage": m0,
-        "pageHomeTitle": MessageLookupByLibrary.simpleMessage("Startseite"),
-        "pageHomeWelcomeMessage": MessageLookupByLibrary.simpleMessage(
-            "Willkommen bei der Over-the-Air-App")
-      };
+    "appTitle": MessageLookupByLibrary.simpleMessage("Over-the-air App"),
+    "pageHomePushedButtonMessage": m0,
+    "pageHomeTitle": MessageLookupByLibrary.simpleMessage("Startseite"),
+    "pageHomeWelcomeMessage": MessageLookupByLibrary.simpleMessage(
+      "Willkommen bei der Over-the-Air-App",
+    ),
+  };
 }
