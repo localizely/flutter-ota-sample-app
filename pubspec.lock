@@ -246,10 +246,10 @@ packages:
     dependency: "direct main"
     description:
       name: localizely_sdk
-      sha256: "5ec940a0cf9184eac912832b30f1c0a68264caa2152823e469475a894fae4374"
+      sha256: "5e9d4fa309479570afd25be6ed1cfc67784af314c06305dbd5d634b1c7df7ec1"
       url: "https://pub.dev"
     source: hosted
-    version: "2.6.1"
+    version: "2.6.2"
   logger:
     dependency: transitive
     description:
