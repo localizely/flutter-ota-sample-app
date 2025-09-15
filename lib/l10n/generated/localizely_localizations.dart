@@ -39,9 +39,9 @@ class _LocalizelyLocalizationsDelegate extends LocalizationsDelegate<AppLocaliza
   const _LocalizelyLocalizationsDelegate();
 
   @override
-  Future<AppLocalizations> load(Locale locale) => AppLocalizations.delegate.load(locale).then((fallback) {
-    LocalizelyGenL10n.setCurrentLocale(locale.toString());
-    return LocalizelyLocalizations(locale.toString(), fallback);
+  Future<AppLocalizations> load(Locale locale) => AppLocalizations.delegate.load(locale).then((appLocalizations) {
+    LocalizelyGenL10n.setCurrentLocale(appLocalizations.localeName);
+    return LocalizelyLocalizations(appLocalizations.localeName, appLocalizations);
   });
 
   @override
